@@ -8,24 +8,24 @@ export default function PricingSection() {
   const accidentPricing = [
     {
       category: "普通車種",
-      basicFee: "17,000円",
-      dispatchFee: "20,000円",
-      transportFee: "100円/km〜",
-      workFee: "500円/1km",
+      basicFee: "18,000円",
+      dispatchFee: "18,000円",
+      transportFee: "300円/km〜",
+      workFee: "800円/km",
     },
     {
       category: "中型車種",
-      basicFee: "25,000円",
-      dispatchFee: "35,000円",
-      transportFee: "150円/km〜",
-      workFee: "1,000円/1km",
+      basicFee: "30,000円",
+      dispatchFee: "30,000円",
+      transportFee: "400円/km〜",
+      workFee: "1,800円~/km",
     },
     {
       category: "大型車種",
       basicFee: "40,000円",
       dispatchFee: "50,000円",
-      transportFee: "200円/km〜",
-      workFee: "1,500円/1km",
+      transportFee: "400円/km〜",
+      workFee: "2,000円~/km",
     },
   ];
 
@@ -55,7 +55,6 @@ export default function PricingSection() {
 
   const notes = [
     "料金は全て税込み価格です",
-    "深夜・早朝（22:00〜6:00）は夜間料金として基本料金の50％増となります",
     "高速道路での作業は別途高速料金・通行料が発生します",
     "作業内容により追加料金が発生する場合があります",
     "事前にお見積もりをご提示いたします",
@@ -260,7 +259,7 @@ export default function PricingSection() {
               </div>
               <div className="bg-white text-red-600 border-2 border-red-600 px-8 py-4 rounded-full font-bold text-xl cursor-pointer whitespace-nowrap hover:bg-red-50 transition-colors inline-flex items-center justify-center">
                 <i className="ri-mail-line mr-3 text-2xl"></i>
-                メールで相談
+                rescue@watamo.com
               </div>
             </div>
           </div>

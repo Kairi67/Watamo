@@ -2,11 +2,11 @@
 
 export default function StatsSection() {
   const stats = [
-    { number: "11,000", label: "年間出動件数", icon: "ri-car-line" },
-    { number: "24", label: "時間対応", icon: "ri-time-line" },
-    { number: "365", label: "日年中無休", icon: "ri-calendar-line" },
-    { number: "21", label: "レッカー車・車載専用車", icon: "ri-truck-line" },
-    { number: "18", label: "従業員数", icon: "ri-team-line" },
+    { number: "12,000件", label: "年間出動件数", icon: "ri-car-line" },
+    { number: "24時間", label: "対応", icon: "ri-time-line" },
+    { number: "365日", label: "年中無休", icon: "ri-calendar-line" },
+    { number: "20台", label: "レッカー・車載専用車", icon: "ri-truck-line" },
+    { number: "20人", label: "現場隊員", icon: "ri-team-line" },
   ];
 
   return (
@@ -15,7 +15,7 @@ export default function StatsSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">信頼の実績</h2>
           <p className="text-xl text-gray-600">
-            数字で見るワタモカーレスキュー静清の実力
+            数字で見るワタモカーレスキュー静清の実績
           </p>
         </div>
 

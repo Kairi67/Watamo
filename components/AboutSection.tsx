@@ -16,9 +16,7 @@ export default function AboutSection() {
           <div>
             <div
               className="h-96 bg-cover bg-center bg-gray-200 rounded-2xl shadow-lg"
-              style={{
-                backgroundImage: `url('https://readdy.ai/api/search-image?query=Modern%20automotive%20service%20center%20building%20exterior%2C%20professional%20road%20assistance%20company%20headquarters%2C%20clean%20corporate%20architecture%20with%20blue%20and%20white%20colors%2C%20company%20vehicles%20parked%20outside%2C%20realistic%20photography%20style%2C%20professional%20business%20establishment&width=600&height=400&seq=company1&orientation=landscape')`,
-              }}
+              style={{ backgroundImage: `url("/about01.jpg")` }}
             ></div>
           </div>
 
@@ -28,7 +26,7 @@ export default function AboutSection() {
                 企業理念
               </h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                不安を安心、安心を満足へ、満足を感動へ！
+                「困ったに寄り添い、地域のインフラとなる」
                 <br />
                 365日24時間体制でお客様の車のトラブルに迅速に対応し、
                 静岡の皆様の安全で快適なカーライフをサポートいたします。
@@ -64,13 +62,14 @@ export default function AboutSection() {
             <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
               会社データ
             </h3>
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <i className="ri-user-line text-blue-600 text-2xl"></i>
                 </div>
                 <h4 className="font-bold text-gray-900 mb-2">代表者名</h4>
-                <p className="text-gray-600">渡邊泰男</p>
+                <p className="text-gray-600">渡邊 泰男</p>
               </div>
 
               <div className="text-center">
@@ -78,17 +77,19 @@ export default function AboutSection() {
                   <i className="ri-truck-line text-green-600 text-2xl"></i>
                 </div>
                 <h4 className="font-bold text-gray-900 mb-2">
-                  レッカー車・車載専用車
+                  レッカー車・車載専用車数
                 </h4>
-                <p className="text-gray-600">21台</p>
+                <p className="text-gray-600">20台</p>
               </div>
 
               <div className="text-center">
                 <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <i className="ri-team-line text-purple-600 text-2xl"></i>
                 </div>
-                <h4 className="font-bold text-gray-900 mb-2">従業員数</h4>
-                <p className="text-gray-600">18名</p>
+                <h4 className="font-bold text-gray-900 mb-2">
+                  従業員数（アルバイト含）
+                </h4>
+                <p className="text-gray-600">23名</p>
               </div>
 
               <div className="text-center">
@@ -109,10 +110,10 @@ export default function AboutSection() {
 
               <div className="text-center">
                 <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i className="ri-map-pin-line text-indigo-600 text-2xl"></i>
+                  <i className="ri-scan-line text-indigo-600 text-2xl"></i>
                 </div>
-                <h4 className="font-bold text-gray-900 mb-2">事業所数</h4>
-                <p className="text-gray-600">2拠点</p>
+                <h4 className="font-bold text-gray-900 mb-2">創業</h4>
+                <p className="text-gray-600">1994年</p>
               </div>
             </div>
           </div>

@@ -31,23 +31,23 @@ export default function Header() {
           <nav className="hidden md:flex items-center space-x-8">
             <Link
               href="#services"
-              className="text-gray-700 hover:text-red-600 transition-colors cursor-pointer whitespace-nowrap"
+              className="text-gray-700 hover:text-blue-600 transition-colors cursor-pointer whitespace-nowrap"
             >
               サービス内容
             </Link>
             <Link
               href="#about"
-              className="text-gray-700 hover:text-red-600 transition-colors cursor-pointer whitespace-nowrap"
+              className="text-gray-700 hover:text-blue-600 transition-colors cursor-pointer whitespace-nowrap"
             >
               会社概要
             </Link>
             <Link
               href="#contact"
-              className="text-gray-700 hover:text-red-600 transition-colors cursor-pointer whitespace-nowrap"
+              className="text-gray-700 hover:text-blue-600 transition-colors cursor-pointer whitespace-nowrap"
             >
               お問い合わせ
             </Link>
-            <div className="bg-red-600 text-white px-6 py-2 rounded-full font-bold cursor-pointer whitespace-nowrap hover:bg-red-700 transition-colors">
+            <div className="bg-blue-600 text-white px-6 py-2 rounded-full font-bold cursor-pointer whitespace-nowrap hover:bg-blue-700 transition-colors">
               <i className="ri-phone-line mr-2"></i>
               054-345-2838
             </div>
@@ -66,23 +66,23 @@ export default function Header() {
             <div className="flex flex-col space-y-4">
               <Link
                 href="#services"
-                className="text-gray-700 hover:text-red-600 transition-colors cursor-pointer"
+                className="text-gray-700 hover:text-blue-600 transition-colors cursor-pointer"
               >
                 サービス内容
               </Link>
               <Link
                 href="#about"
-                className="text-gray-700 hover:text-red-600 transition-colors cursor-pointer"
+                className="text-gray-700 hover:text-blue-600 transition-colors cursor-pointer"
               >
                 会社概要
               </Link>
               <Link
                 href="#contact"
-                className="text-gray-700 hover:text-red-600 transition-colors cursor-pointer"
+                className="text-gray-700 hover:text-blue-600 transition-colors cursor-pointer"
               >
                 お問い合わせ
               </Link>
-              <div className="bg-red-600 text-white px-6 py-2 rounded-full font-bold cursor-pointer whitespace-nowrap hover:bg-red-700 transition-colors text-center">
+              <div className="bg-blue-600 text-white px-6 py-2 rounded-full font-bold cursor-pointer whitespace-nowrap hover:bg-blue-700 transition-colors text-center">
                 054-345-2838
               </div>
             </div>
