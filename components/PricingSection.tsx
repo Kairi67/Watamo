@@ -201,6 +201,7 @@ export default function PricingSection() {
             <h3 className="text-xl md:text-2xl font-bold text-green-900 mb-6 md:mb-8 text-center">
               対象車両区分
             </h3>
+
             {/* グリッド: スマホでは1列、PCでは3列 */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
               {vehicleCategories.map((item, index) => (
@@ -224,7 +225,7 @@ export default function PricingSection() {
         </div>
 
         {/* 注意事項 */}
-        <div className="mb-10 md:mb-16">
+        {/* <div className="mb-10 md:mb-16">
           <div className="bg-yellow-50 rounded-2xl p-4 md:p-8">
             <h3 className="text-xl md:text-2xl font-bold text-yellow-900 mb-6 md:mb-8 text-center">
               注意事項
@@ -244,7 +245,7 @@ export default function PricingSection() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* お見積もりCTA */}
         <div className="text-center">
@@ -253,7 +254,7 @@ export default function PricingSection() {
               無料お見積もり
             </h3>
             <p className="text-sm md:text-base text-red-800 mb-4 md:mb-6">
-              作業前に必ず料金をご提示いたします。お気軽にお問い合わせください
+              作業前にお見積りをご提示いたします。お気軽にお問い合わせください。
             </p>
             {/* CTAボタン: スマホで縦並び、横幅いっぱいに広げる */}
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">

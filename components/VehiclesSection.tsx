@@ -94,11 +94,11 @@ export default function VehiclesSection() {
                 </div>
 
                 {/* 積載量/能力 */}
-                <div className="mb-2">
+                {/* <div className="mb-2">
                   <p className="text-gray-600 font-medium text-sm md:text-base">
                     {vehicle.capacity}
                   </p>
-                </div>
+                </div> */}
 
                 {/* 特徴リスト (コメントアウトされていますが、もし使うならレスポンシブ対応) */}
                 {/* <div className="space-y-1 mt-3">
