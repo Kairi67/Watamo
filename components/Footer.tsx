@@ -162,28 +162,28 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-10 pt-6 md:mt-12 md:pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
             <p className="text-gray-400 text-xs md:text-sm text-center">
-              © 2024 有限会社ワタモ カーレスキュー静清. All rights reserved.
+              © 2025 有限会社ワタモ カーレスキュー静清. All rights reserved.
             </p>
-            <div className="flex flex-wrap justify-center space-x-4 md:space-x-6">
-              <a
-                href="#"
-                className="text-gray-400 text-xs md:text-sm hover:text-white cursor-pointer transition-colors"
-              >
-                プライバシーポリシー
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 text-xs md:text-sm hover:text-white cursor-pointer transition-colors"
-              >
-                利用規約
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 text-xs md:text-sm hover:text-white cursor-pointer transition-colors"
-              >
-                サイトマップ
-              </a>
-            </div>
+            {/* <div className="flex flex-wrap justify-center space-x-4 md:space-x-6">
+                <a
+                  href="#"
+                  className="text-gray-400 text-xs md:text-sm hover:text-white cursor-pointer transition-colors"
+                >
+                  プライバシーポリシー
+                </a>
+                <a
+                  href="#"
+                  className="text-gray-400 text-xs md:text-sm hover:text-white cursor-pointer transition-colors"
+                >
+                  利用規約
+                </a>
+                <a
+                  href="#"
+                  className="text-gray-400 text-xs md:text-sm hover:text-white cursor-pointer transition-colors"
+                >
+                  サイトマップ
+                </a>
+            </div> */}
           </div>
         </div>
       </div>
