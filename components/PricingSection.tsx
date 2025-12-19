@@ -7,35 +7,42 @@ export default function PricingSection() {
 
   const accidentPricing = [
     {
-      category: "普通車種",
-      basicFee: "18,000円",
-      dispatchFee: "18,000円",
-      transportFee: "300円/km〜",
-      workFee: "800円/km",
+      category: "乗用車・オートバイ（3t未満）",
+      basicFee: "19,800円",
+      transportFee: "330円/km",
+      workFee: "880円/km",
+      dispatchFee: "880円/km",
     },
     {
-      category: "中型車種",
-      basicFee: "30,000円",
-      dispatchFee: "30,000円",
-      transportFee: "400円/km〜",
-      workFee: "1,800円~/km",
+      category: "小型トラック（5t未満）",
+      basicFee: "28,600円",
+      transportFee: "330円/km",
+      workFee: "1100円/km",
+      dispatchFee: "1320円/km",
     },
     {
-      category: "大型車種",
-      basicFee: "40,000円",
-      dispatchFee: "50,000円",
-      transportFee: "400円/km〜",
-      workFee: "2,000円~/km",
+      category: "中型トラック（8t未満）",
+      basicFee: "33,000円",
+      transportFee: "440円/km",
+      workFee: "1,980円/km",
+      dispatchFee: "2,200円/km",
+    },
+    {
+      category: "大型トラック（25t未満）",
+      basicFee: "44,000円",
+      transportFee: "440円/km",
+      workFee: "2,200円/km",
+      dispatchFee: "2,750円/km",
     },
   ];
 
   const workPricing = [
-    { service: "バッテリー上がり", price: "4,000円〜" },
-    { service: "スペアタイヤ交換", price: "3,000円〜" },
-    { service: "ウインチ積載", price: "5,000円〜" },
-    { service: "クレーン作業・脱輪", price: "5,000円〜" },
-    { service: "横転・転覆", price: "15,000円〜" },
-    { service: "タイヤドーリー使用", price: "5,000円〜" },
+    { service: "バッテリー上がり", price: "4,400円〜" },
+    { service: "スペアタイヤ交換", price: "3,300円〜" },
+    { service: "ウインチ積載", price: "5,500円〜" },
+    { service: "クレーン作業", price: "16,500円〜" },
+    { service: "ドーリー使用（1輪あたり）", price: "2,750円〜" },
+    { service: "レッキング作業(乗用車)", price: "5,500円〜" },
   ];
 
   const vehicleCategories = [
@@ -55,10 +62,10 @@ export default function PricingSection() {
 
   const notes = [
     "料金は全て税込み価格です",
-    "高速道路での作業は別途高速料金・通行料が発生します",
     "作業内容により追加料金が発生する場合があります",
     "事前にお見積もりをご提示いたします",
-    "JAF会員様、各種保険適用の場合は料金が変動します",
+    "各種保険適用の場合は料金が変動します",
+    "有料道路・高速道路代金は別途ご請求します",
   ];
 
   return (
@@ -70,12 +77,12 @@ export default function PricingSection() {
             料金表
           </h2>
           <p className="text-sm md:text-xl text-gray-600 max-w-3xl mx-auto">
-            明確な料金体系で安心してご利用いただけます。事前見積もりも無料です
+            明確な料金体系で安心してご利用いただけます。事前見積もりも無料です。
           </p>
         </div>
 
         {/* タブ切り替え: スマホでのタッチ領域を考慮 */}
-        <div className="flex justify-center mb-10 md:mb-12">
+        {/* <div className="flex justify-center mb-10 md:mb-12">
           <div className="bg-gray-100 p-1 rounded-full flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 w-full sm:w-auto">
             <button
               onClick={() => setActiveTab("accident")}
@@ -100,14 +107,14 @@ export default function PricingSection() {
               作業料金
             </button>
           </div>
-        </div>
+        </div> */}
 
         {/* 事故車・故障車料金表 */}
         {activeTab === "accident" && (
           <div className="mb-10 md:mb-16">
             <div className="bg-red-50 rounded-2xl p-4 md:p-8">
               <h3 className="text-xl md:text-2xl font-bold text-red-900 mb-6 md:mb-8 text-center">
-                事故車・故障車料金表
+                出動料金表（税込）
               </h3>
               {/* テーブルを横スクロール可能にする */}
               <div className="overflow-x-auto shadow-xl rounded-xl">
@@ -118,16 +125,16 @@ export default function PricingSection() {
                         車種区分
                       </th>
                       <th className="px-3 py-2 md:px-6 md:py-4 text-center font-bold w-1/5">
-                        基本料金 (日中)
-                      </th>
-                      <th className="px-3 py-2 md:px-6 md:py-4 text-center font-bold w-1/5">
-                        基本料金 (夜間)
+                        基本料金 (8:00-19:00)
                       </th>
                       <th className="px-3 py-2 md:px-6 md:py-4 text-center font-bold w-1/5">
                         回送料金
                       </th>
                       <th className="px-3 py-2 md:px-6 md:py-4 text-center font-bold w-1/5">
-                        作業料金
+                        配送・牽引料金（空車）
+                      </th>
+                      <th className="px-3 py-2 md:px-6 md:py-4 text-center font-bold w-1/5">
+                        配送・牽引料金（実車）
                       </th>
                     </tr>
                   </thead>
@@ -144,29 +151,39 @@ export default function PricingSection() {
                           {item.basicFee}
                         </td>
                         <td className="px-3 py-3 md:px-6 md:py-4 text-center text-red-600 font-bold text-sm md:text-base whitespace-nowrap">
-                          {item.dispatchFee}
-                        </td>
-                        <td className="px-3 py-3 md:px-6 md:py-4 text-center text-red-600 font-bold text-sm md:text-base whitespace-nowrap">
                           {item.transportFee}
                         </td>
                         <td className="px-3 py-3 md:px-6 md:py-4 text-center text-red-600 font-bold text-sm md:text-base whitespace-nowrap">
                           {item.workFee}
+                        </td>
+                        <td className="px-3 py-3 md:px-6 md:py-4 text-center text-red-600 font-bold text-sm md:text-base whitespace-nowrap">
+                          {item.dispatchFee}
                         </td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
+
+              <div className="flex justify-end mt-4">
+                <a
+                  className="text-sm font-bold text-gray-800 leading-relaxed"
+                  href="/priceboard.pdf"
+                  target="_blank"
+                >
+                  ※ 料金詳細はこちらをご覧ください
+                </a>
+              </div>
             </div>
           </div>
         )}
 
         {/* 作業料金表 */}
-        {activeTab === "work" && (
+        {activeTab === "accident" && (
           <div className="mb-10 md:mb-16">
             <div className="bg-blue-50 rounded-2xl p-4 md:p-8">
               <h3 className="text-xl md:text-2xl font-bold text-blue-900 mb-6 md:mb-8 text-center">
-                作業料金表
+                作業料金表（税込）
               </h3>
               {/* グリッド: スマホでは1列、PCでは2列 */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
@@ -196,13 +213,13 @@ export default function PricingSection() {
         )}
 
         {/* 対象車両区分 */}
-        <div className="mb-10 md:mb-16">
+
+        {/* <div className="mb-10 md:mb-16">
           <div className="bg-green-50 rounded-2xl p-4 md:p-8">
             <h3 className="text-xl md:text-2xl font-bold text-green-900 mb-6 md:mb-8 text-center">
               対象車両区分
             </h3>
 
-            {/* グリッド: スマホでは1列、PCでは3列 */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
               {vehicleCategories.map((item, index) => (
                 <div
@@ -222,10 +239,10 @@ export default function PricingSection() {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* 注意事項 */}
-        {/* <div className="mb-10 md:mb-16">
+        <div className="mb-10 md:mb-16">
           <div className="bg-yellow-50 rounded-2xl p-4 md:p-8">
             <h3 className="text-xl md:text-2xl font-bold text-yellow-900 mb-6 md:mb-8 text-center">
               注意事項
@@ -245,7 +262,7 @@ export default function PricingSection() {
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
 
         {/* お見積もりCTA */}
         <div className="text-center">
@@ -270,7 +287,7 @@ export default function PricingSection() {
                 className="w-full bg-white text-red-600 border-2 border-red-600 px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-base md:text-xl cursor-pointer hover:bg-red-50 transition-colors inline-flex items-center justify-center"
               >
                 <i className="ri-mail-line mr-2 md:mr-3 text-xl md:text-2xl"></i>
-                メールでお問い合わせ
+                お問い合わせ
               </a>
             </div>
           </div>
