@@ -68,14 +68,14 @@ export default function VehiclesSection() {
             >
               {/* 画像エリア: スマホでは高さを抑える (h-40) */}
               <div
-                className="h-40 md:h-56 bg-cover bg-center bg-gray-200"
+                className="h-48 md:h-56 bg-cover bg-center bg-gray-200"
                 style={{ backgroundImage: `url(${vehicle.image})` }}
                 role="img"
                 aria-label={`${vehicle.name}の画像`}
               ></div>
 
               <div className="p-4 md:p-6">
-                <div className="flex items-start justify-between mb-2">
+                <div className="flex items-start justify-between">
                   {/* 車両名: 文字サイズ調整 */}
                   <h3 className="text-lg md:text-xl font-bold text-gray-900 leading-tight pr-4">
                     {vehicle.name}
