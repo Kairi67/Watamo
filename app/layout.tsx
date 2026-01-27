@@ -22,6 +22,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "ワタモ",
   description: "カーレスキュー静清",
+  verification: {
+    google: "gD0CKxgSeV1LuT2dvFiBx9jPhkCwicpiwDdCt3vxIaM",
+  },
 };
 
 export default function RootLayout({
