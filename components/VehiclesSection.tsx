@@ -14,7 +14,7 @@ export default function VehiclesSection() {
       type: "中型車両対応",
       capacity: "積載能力 5t",
       features: ["市街地対応", "狭い道路OK", "スピード対応"],
-      image: "/vehicle02.png",
+      image: "/vehicle02.JPG",
     },
     {
       name: "レッカー車（小型）",
@@ -35,7 +35,7 @@ export default function VehiclesSection() {
       type: "搬送用",
       capacity: "5台積み搬送可",
       features: ["泥濘地対応", "スタック救出", "悪路対応"],
-      image: "/vehicle05.png",
+      image: "/vehicle05.JPG",
     },
     {
       name: "サービスカー",
