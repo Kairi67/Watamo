@@ -5,6 +5,7 @@ import Image from "next/image";
 import HeroSection from "../components/HeroSection";
 import ServicesSection from "../components/ServicesSection";
 import AboutSection from "../components/AboutSection";
+import RecruitSection from "../components/RecruitSection";
 import StatsSection from "../components/StatsSection";
 import VehiclesSection from "../components/VehiclesSection";
 import PricingSection from "../components/PricingSection";
@@ -38,6 +39,7 @@ export default function Home() {
       <PricingSection />
       {/* <StaffSection /> */}
       <AboutSection />
+      {/* <RecruitSection /> */}
       <ContactSection />
       <Footer />
     </div>

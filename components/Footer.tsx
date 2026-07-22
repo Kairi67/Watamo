@@ -1,189 +1,369 @@
-"use client";
+// "use client";
+
+type Office = {
+  name: string;
+  address: string;
+  type: "店舗" | "ヤード";
+};
+
+const services = [
+  "バッテリー上がり",
+  "パンク時のスペア交換",
+  "キー閉じ込み対応",
+  "落輪・スタック救出",
+  "車両搬送・牽引",
+  "出張整備",
+];
+
+const offices: Office[] = [
+  {
+    name: "清水インター店",
+    address: "静岡市清水区八坂北1-1-53-1",
+    type: "店舗",
+  },
+  {
+    name: "静岡インター店",
+    address: "静岡市駿河区中島1131-1",
+    type: "店舗",
+  },
+  {
+    name: "タウ清水ヤード",
+    address: "静岡市清水区小島町59-1",
+    type: "ヤード",
+  },
+  {
+    name: "タウ富士ヤード",
+    address: "富士市入山瀬宇猪久保835-1",
+    type: "ヤード",
+  },
+];
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-gray-900 text-white py-12 md:py-16">
-      <div className="container mx-auto px-4">
-        {/* メイングリッド: スマホでは縦積み、PCで4列 */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
-          {/* 会社情報エリア (スマホで縦幅を大きく使うため、PCでは2カラム幅) */}
-          <div className="md:col-span-2">
-            <div className="flex items-center space-x-3 mb-4 md:mb-6">
-              <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center flex-shrink-0">
-                <img
-                  src="https://static.readdy.ai/image/8864c8d66d2b0793a2420b2c6e368183/542c11bc718313eebca2b950be62d923.png"
-                  alt="ワタモ カーレスキュー静清 ロゴ"
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <div>
-                <h3 className="font-pacifico text-white font-bold text-xl md:text-2xl">
-                  有限会社ワタモ
-                </h3>
-                <p className="text-gray-400 text-sm md:text-base">
-                  カーレスキュー静清
-                </p>
-              </div>
+    <footer className="bg-slate-950 text-white">
+      {/* 緊急連絡エリア */}
+      <div className="border-b border-white/10 bg-red-600">
+        <div className="container mx-auto px-4 py-5 md:py-6">
+          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+            <div className="text-center sm:text-left">
+              <p className="mb-1 text-sm font-bold text-red-100">
+                お車のトラブルでお困りの方
+              </p>
+
+              <p className="text-xl font-bold text-white md:text-2xl">
+                24時間365日、迅速に対応します
+              </p>
             </div>
 
-            <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-6">
-              有限会社ワタモ
-              カーレスキュー静清は、静岡で24時間365日お客様の車のトラブルに対応するロードサービス会社です。年間12,000件の出動実績で、確かな技術力と迅速な対応をお約束します。
-            </p>
+            <a
+              href="tel:0543452838"
+              aria-label="054-345-2838へ電話する"
+              className="
+                inline-flex w-full items-center justify-center
+                rounded-full bg-white px-6 py-3
+                text-lg font-bold text-red-600
+                shadow-lg transition-all duration-200
+                hover:-translate-y-0.5 hover:bg-red-50
+                focus:outline-none focus-visible:ring-4
+                focus-visible:ring-white/50
+                sm:w-auto md:px-8 md:text-xl
+              "
+            >
+              <i
+                className="ri-phone-fill mr-2 text-xl md:text-2xl"
+                aria-hidden="true"
+              />
+              054-345-2838
+            </a>
+          </div>
+        </div>
+      </div>
 
-            {/* ソーシャル/連絡先アイコン (リンク化) */}
-            <div className="flex space-x-3">
-              <a
-                href="tel:0543452838"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center cursor-pointer hover:bg-red-600 transition-colors"
-                aria-label="電話をかける"
-              >
-                <i className="ri-phone-line"></i>
-              </a>
-              <a
-                href="mailto:rescue@watamo.com"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center cursor-pointer hover:bg-red-600 transition-colors"
-                aria-label="メールを送信"
-              >
-                <i className="ri-mail-line"></i>
-              </a>
-              <a
-                href="https://maps.app.goo.gl/YourMapLinkHere" // 適切な地図リンクを設定
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center cursor-pointer hover:bg-red-600 transition-colors"
-                aria-label="地図を見る"
-              >
-                <i className="ri-map-pin-line"></i>
-              </a>
+      {/* フッター本体 */}
+      <div className="container mx-auto px-4 py-10 md:py-14">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          {/* 会社情報 */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <div className="h-full rounded-2xl bg-white/[0.04] p-5 ring-1 ring-white/10 md:p-6">
+              <div className="mb-5 flex items-center gap-3">
+                <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-white p-1.5 md:h-16 md:w-16">
+                  <img
+                    src="https://static.readdy.ai/image/8864c8d66d2b0793a2420b2c6e368183/542c11bc718313eebca2b950be62d923.png"
+                    alt="有限会社ワタモ カーレスキュー静清"
+                    className="h-full w-full object-contain"
+                  />
+                </div>
+
+                <div>
+                  <p className="text-lg font-bold text-white md:text-xl">
+                    有限会社ワタモ
+                  </p>
+                  <p className="mt-1 text-sm font-medium text-gray-300">
+                    カーレスキュー静清
+                  </p>
+                </div>
+              </div>
+
+              <p className="text-sm leading-7 text-gray-300">
+                静岡県内を中心に、24時間365日対応するロードサービス会社です。
+                年間12,000件の出動実績をもとに、迅速かつ安全にお客様をサポートします。
+              </p>
+
+              <div className="mt-6 flex gap-3">
+                <a
+                  href="tel:0543452838"
+                  aria-label="電話をかける"
+                  className="
+                    flex h-11 w-11 items-center justify-center
+                    rounded-full bg-white/10 text-lg text-white
+                    transition-colors hover:bg-red-600
+                    focus:outline-none focus-visible:ring-4
+                    focus-visible:ring-red-400/40
+                  "
+                >
+                  <i className="ri-phone-line" aria-hidden="true" />
+                </a>
+
+                <a
+                  href="mailto:rescue@watamo.com"
+                  aria-label="メールを送る"
+                  className="
+                    flex h-11 w-11 items-center justify-center
+                    rounded-full bg-white/10 text-lg text-white
+                    transition-colors hover:bg-red-600
+                    focus:outline-none focus-visible:ring-4
+                    focus-visible:ring-red-400/40
+                  "
+                >
+                  <i className="ri-mail-line" aria-hidden="true" />
+                </a>
+
+                <a
+                  href="#contact"
+                  aria-label="事業所案内を見る"
+                  className="
+                    flex h-11 w-11 items-center justify-center
+                    rounded-full bg-white/10 text-lg text-white
+                    transition-colors hover:bg-red-600
+                    focus:outline-none focus-visible:ring-4
+                    focus-visible:ring-red-400/40
+                  "
+                >
+                  <i className="ri-map-pin-line" aria-hidden="true" />
+                </a>
+              </div>
             </div>
           </div>
 
           {/* サービス内容 */}
-          <div>
-            <h4 className="text-base md:text-lg font-bold mb-4 md:mb-6">
-              サービス内容
-            </h4>
-            <ul className="space-y-2 text-gray-400 text-sm">
-              <li>
-                <a
-                  href="#services"
-                  className="hover:text-white transition-colors"
-                >
-                  バッテリー上がり
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#services"
-                  className="hover:text-white transition-colors"
-                >
-                  パンク時のスペア交換
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#services"
-                  className="hover:text-white transition-colors"
-                >
-                  キー閉じ込み対応
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#services"
-                  className="hover:text-white transition-colors"
-                >
-                  落輪・スタック救出
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#services"
-                  className="hover:text-white transition-colors"
-                >
-                  車両搬送・牽引
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#services"
-                  className="hover:text-white transition-colors"
-                >
-                  出張整備
-                </a>
-              </li>
+          <div className="h-full rounded-2xl bg-white/[0.04] p-5 ring-1 ring-white/10 md:p-6">
+            <div className="mb-5 flex items-center gap-3">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-red-600/20">
+                <i
+                  className="ri-tools-line text-lg text-red-400"
+                  aria-hidden="true"
+                />
+              </div>
+
+              <h3 className="text-base font-bold text-white md:text-lg">
+                サービス内容
+              </h3>
+            </div>
+
+            <ul className="space-y-1">
+              {services.map((service) => (
+                <li key={service}>
+                  <a
+                    href="#services"
+                    className="
+                      group flex min-h-9 items-center
+                      rounded-lg px-2 py-1.5
+                      text-sm text-gray-300
+                      transition-colors
+                      hover:bg-white/[0.06] hover:text-white
+                    "
+                  >
+                    <i
+                      className="
+                        ri-arrow-right-s-line mr-2
+                        text-base text-red-400
+                        transition-transform
+                        group-hover:translate-x-0.5
+                      "
+                      aria-hidden="true"
+                    />
+                    {service}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* 会社情報 / 連絡先 */}
-          <div>
-            <h4 className="text-base md:text-lg font-bold mb-4 md:mb-6">
-              会社情報
-            </h4>
-            <div className="space-y-3 text-gray-400 text-sm">
-              {/* 緊急ダイヤル (リンク化) */}
+          {/* お問い合わせ */}
+          <div className="h-full rounded-2xl bg-white/[0.04] p-5 ring-1 ring-white/10 md:p-6">
+            <div className="mb-5 flex items-center gap-3">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-red-600/20">
+                <i
+                  className="ri-customer-service-2-line text-lg text-red-400"
+                  aria-hidden="true"
+                />
+              </div>
+
+              <h3 className="text-base font-bold text-white md:text-lg">
+                お問い合わせ
+              </h3>
+            </div>
+
+            <div className="space-y-5">
               <div>
-                <p className="font-bold text-white mb-1">緊急ダイヤル</p>
+                <p className="mb-1.5 text-xs font-bold tracking-wide text-gray-400">
+                  緊急ダイヤル
+                </p>
+
                 <a
                   href="tel:0543452838"
-                  className="text-white text-base hover:text-red-400 transition-colors"
+                  className="
+                    inline-flex items-center text-lg
+                    font-bold text-white
+                    transition-colors hover:text-red-400
+                  "
                 >
+                  <i
+                    className="ri-phone-fill mr-2 text-red-400"
+                    aria-hidden="true"
+                  />
                   054-345-2838
                 </a>
               </div>
-              {/* お問い合わせ (リンク化) */}
+
               <div>
-                <p className="font-bold text-white mb-1">お問い合わせ</p>
+                <p className="mb-1.5 text-xs font-bold tracking-wide text-gray-400">
+                  メール
+                </p>
+
                 <a
                   href="mailto:rescue@watamo.com"
-                  className="text-white hover:text-red-400 transition-colors"
+                  className="
+                    break-all text-sm text-gray-200
+                    transition-colors hover:text-red-400
+                  "
                 >
                   rescue@watamo.com
                 </a>
               </div>
-
-              {/* 店舗情報 */}
               <div>
-                <p className="font-bold text-white mb-1">清水インター店</p>
-                <p className="text-gray-400 text-xs">
-                  静岡市清水区八坂北1-1-53-1
+                <p className="mb-1.5 text-xs font-bold tracking-wide text-gray-400">
+                  インスタグラム
                 </p>
+
+                <a
+                  href="https://www.instagram.com/watamo_rescue24/"
+                  className="
+                    break-all text-sm text-gray-200
+                    transition-colors hover:text-red-400
+                  "
+                >
+                  @watamo_rescue24
+                </a>
               </div>
-              <div>
-                <p className="font-bold text-white mb-1">静岡インター店</p>
-                <p className="text-gray-400 text-xs">静岡市駿河区中島1131-1</p>
+
+              <div className="rounded-xl bg-red-600/10 p-4 ring-1 ring-red-500/20">
+                <div className="flex items-center gap-2">
+                  <i
+                    className="ri-time-line text-lg text-red-400"
+                    aria-hidden="true"
+                  />
+
+                  <p className="font-bold text-white">24時間365日対応</p>
+                </div>
+
+                <p className="mt-2 text-xs leading-5 text-gray-300">
+                  深夜・早朝・休日を問わずご相談ください。
+                </p>
               </div>
             </div>
           </div>
+
+          {/* 事業所 */}
+          <div className="h-full rounded-2xl bg-white/[0.04] p-5 ring-1 ring-white/10 md:p-6">
+            <div className="mb-5 flex items-center gap-3">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-red-600/20">
+                <i
+                  className="ri-map-pin-line text-lg text-red-400"
+                  aria-hidden="true"
+                />
+              </div>
+
+              <h3 className="text-base font-bold text-white md:text-lg">
+                事業所案内
+              </h3>
+            </div>
+
+            <div className="space-y-4">
+              {offices.map((office) => (
+                <div
+                  key={office.name}
+                  className="border-b border-white/10 pb-4 last:border-b-0 last:pb-0"
+                >
+                  <div className="mb-1.5 flex items-center gap-2">
+                    <p className="text-sm font-bold text-white">
+                      {office.name}
+                    </p>
+
+                    <span
+                      className={`
+                        rounded-full px-2 py-0.5 text-[10px] font-bold
+                        ${
+                          office.type === "店舗"
+                            ? "bg-blue-500/20 text-blue-300"
+                            : "bg-orange-500/20 text-orange-300"
+                        }
+                      `}
+                    >
+                      {office.type}
+                    </span>
+                  </div>
+
+                  <p className="pl-0 text-xs leading-5 text-gray-300">
+                    {office.address}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <a
+              href="#contact"
+              className="
+                mt-5 inline-flex w-full items-center justify-center
+                rounded-full border border-white/15
+                px-4 py-2.5 text-sm font-bold text-white
+                transition-colors
+                hover:border-red-500 hover:bg-red-600
+              "
+            >
+              詳しい地図を見る
+              <i className="ri-arrow-right-line ml-2" aria-hidden="true" />
+            </a>
+          </div>
         </div>
 
-        {/* コピーライト/二次ナビゲーション */}
-        <div className="border-t border-gray-800 mt-10 pt-6 md:mt-12 md:pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
-            <p className="text-gray-400 text-xs md:text-sm text-center">
-              © 2025 有限会社ワタモ カーレスキュー静清. All rights reserved.
+        {/* コピーライト */}
+        <div className="mt-10 border-t border-white/10 pt-6 md:mt-12 md:pt-8">
+          <div className="flex flex-col items-center justify-between gap-3 md:flex-row">
+            <p className="text-center text-xs leading-relaxed text-gray-400 md:text-left md:text-sm">
+              © {currentYear} 有限会社ワタモ カーレスキュー静清. All rights
+              reserved.
             </p>
-            {/* <div className="flex flex-wrap justify-center space-x-4 md:space-x-6">
-                <a
-                  href="#"
-                  className="text-gray-400 text-xs md:text-sm hover:text-white cursor-pointer transition-colors"
-                >
-                  プライバシーポリシー
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-400 text-xs md:text-sm hover:text-white cursor-pointer transition-colors"
-                >
-                  利用規約
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-400 text-xs md:text-sm hover:text-white cursor-pointer transition-colors"
-                >
-                  サイトマップ
-                </a>
-            </div> */}
+
+            <a
+              href="#"
+              className="text-xs text-gray-400 transition-colors hover:text-white md:text-sm"
+            >
+              ページ上部へ
+              <i className="ri-arrow-up-line ml-1" aria-hidden="true" />
+            </a>
           </div>
         </div>
       </div>
